@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function (Request $request) {
-    $solution = (new \App\Algorithm\FindFirstAndLastPosition())->handle();
+    $solution = (new \App\Algorithm\SearchIn2DArray())->handle();
 
     return response()->json([
        'data' => $solution,
