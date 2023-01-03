@@ -72,13 +72,16 @@ class FindFirstAndLastPosition
 
             if ($target == $array[$middle]) {
                 if ($middle == count($array)-1) return $middle;
-                if ($array[$middle-1] == $target) $left = $middle +1;
-                else return $middle;
+                if ($array[$middle-1] == $target) {
+                    $left = $middle +1;
+                } else {
+                    return $middle;
+                }
             }else if ($target < $array[$middle]) {
                 $right = $middle-1;
             }else $left = $middle + 1;
         }
-        return $middle;
+        return -1;
     }
 
     private function findLeftExtremeRecursion($array, $target, $left, $right)
